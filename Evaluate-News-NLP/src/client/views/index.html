@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>News Article NLP</title>
+  </head>
+  <body>
+    <header>
+      <h1>News Article NLP</h1>
+    </header>
+
+    <main>
+      <h2>Natural Language Processing</h2>
+
+      <p>
+        Natural language processing (NLP) is a branch of artificial intelligence
+        that helps computers understand, interpret and manipulate human
+        language. NLP draws from many disciplines, including computer science
+        and computational linguistics, in its pursuit to fill the gap between
+        human communication and computer understanding.
+      </p>
+
+      <form class="" onsubmit="return Client.handleSubmitArticle(event)">
+        <label for="test-url">
+          try putting in the url of an article - like from your favorite news
+          source.
+        </label>
+        <input required id="test-url" type="text" placeholder="https://..." />
+        <input class="submit-button" type="submit" value="Submit" />
+      </form>
+
+      <section class="url-results">
+        <ul>
+          <li>
+            <h3>Text Polarity:</h3>
+            <p id="polarity"></p>
+            <h4>Confidence:</h4>
+            <p id="polarity_confidence"></p>
+          </li>
+
+          <li>
+            <h3>Text Subjectivity:</h3>
+            <p id="subjectivity"></p>
+            <h4>Confidence:</h4>
+            <p id="subjectivity_confidence"></p>
+          </li>
+
+          <li>
+            <h3>Text Excerpt:</h3>
+            <p id="excerpt"></p>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>Udacity FEND Project</p>
+    </footer>
+
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () =>
+          navigator.serviceWorker.register("/service-worker.js")
+        );
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,130 @@
+@import "nav.css";
+@import "post.css";
+@import "footer.css";
+
+.container {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 70% 10% 20%;
+  grid-template-rows: 15% 45% 35% 5%;
+  grid-template-areas:
+    "nav nav nav"
+    "top-post top-post sidebar"
+    "posts posts sidebar"
+    "ft ft ft";
+}
+
+#top-post {
+  grid-area: top-post;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("../images/taj-mahal.jpg");
+}
+
+#posts {
+  grid-area: posts;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+#post-1 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("../images/golden-temple.jpg");
+  height: 90%;
+}
+
+#post-2 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("../images/hampi.jpg");
+  height: 90%;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: auto;
+}
+
+.search,
+.newsletter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+.search-area {
+  display: flex;
+  flex-direction: rows;
+  justify-content: center;
+  align-items: center;
+}
+
+.newsletter-register {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.newsletter-register input {
+  margin-bottom: 10px;
+}
+
+.searchbar-input,
+.newsletter-input {
+  width: 80%;
+  padding: 5px;
+  margin-right: 5px;
+}
+
+.searchbar-form-button,
+.newsletter-form-button {
+  padding: 10px 20px;
+  text-align: center;
+  margin: 15px 0;
+  display: inline-block;
+  background-color: transparent;
+  border: 2px solid #9e9e9e;
+  border-radius: 3px;
+  color: black;
+}
+
+footer {
+  grid-area: ft;
+}
+
+@media (max-width: 1000px) {
+  .container {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 70% 30%;
+    grid-template-rows: 15% 45% 35% 5%;
+    grid-template-areas:
+      "nav nav"
+      "top-post top-post"
+      "posts posts"
+      "ft ft ft";
+  }
+
+  .sidebar {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+
+  .sidebar {
+    display: none;
+  }
+}
